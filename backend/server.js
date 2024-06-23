@@ -4,6 +4,7 @@ import cors from 'cors'
 import connectDB from './config/db.js'
 
 import userRouter from './routes/userRouter.js'
+import bookRouter from './routes/bookRouter.js'
 
 const app = express();
 dotenv.config();
@@ -19,7 +20,7 @@ app.use(cors({
 
 
 app.use('/api/user', userRouter)
-
+app.use('/api/book', bookRouter)
 
 const PORT = process.env.PORT || 5000;
 
