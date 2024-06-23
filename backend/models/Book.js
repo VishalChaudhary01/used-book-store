@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Joi from 'joi'
+import Joi from 'joi';
 
 const bookSchema = new mongoose.Schema(
      {
