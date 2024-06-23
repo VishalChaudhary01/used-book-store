@@ -1,6 +1,6 @@
-import mongoose from 'mongoose'
-import Joi from 'joi'
-import bcrypt from 'bcryptjs'
+import mongoose from 'mongoose';
+import Joi from 'joi';
+import bcrypt from 'bcryptjs';
 
 const userSchema = new mongoose.Schema({
      name: {
@@ -55,6 +55,7 @@ const signinValidation = Joi.object({
 });
 
 const User = mongoose.model('User', userSchema)
+
 
 export {
      User, 
