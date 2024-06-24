@@ -15,7 +15,7 @@ const uploadBook = async (req, res) => {
      const user = req.id;
      const { name, author, publishYear, category, imageUrl, description, price } = req.body;
      const result = bookValidation.validate(req.body);
-     if (!result.error) return res.status(400).json({ message: result.error.details[0].message});
+     if (result.error) return res.status(400).json({ message: result.error.details[0].message});
      const newBook = await Book.create({
           user,
           name,
