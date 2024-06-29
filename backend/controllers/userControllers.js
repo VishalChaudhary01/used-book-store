@@ -16,7 +16,8 @@ const signup = async (req, res) => {
           password
      })
      const token = generateToken(user._id);
-     res.status(201).json({ message: "Signup successfully", token })
+     const userWithoutPassword = await User.findOne({ email: req.body.email }, ('-password'))
+     res.status(201).json({ message: "Signup successfully", user: userWithoutPassword, token })
 }
 
 const signin = async (req, res) => {
@@ -31,7 +32,8 @@ const signin = async (req, res) => {
      if (!match) return res.status(400).json({ message: "Invalid credentials" })
 
      const token = generateToken(user._id);
-     res.status(200).json({ message: "Signin successfully", token })
+     const userWithoutPassword = await User.findOne({ email: req.body.email }, ('-password'))
+     res.status(200).json({ message: "Signin successfully", user: userWithoutPassword, token })
 }
 
 const getUserProfile = async (req, res) => {
