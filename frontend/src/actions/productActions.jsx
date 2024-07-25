@@ -40,7 +40,7 @@ export const listProducts = () => async (dispatch) => {
 export const productDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
-    const { data } = await axios.get(`http://localhost:5000/books/${id}`);
+    const { data } = await axios.get(`http://localhost:5000/api/books/${id}`);
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
       payload: data,
@@ -118,7 +118,7 @@ export const createProduct = (userObj) => async (dispatch, getState) => {
 export const updateProduct = (product) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_UPDATE_REQUEST });
-    const res = await fetch(`http://localhost:5000/books/${product.id}`, {
+    const res = await fetch(`http://localhost:5000/api/books/${product.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

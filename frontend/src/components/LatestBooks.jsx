@@ -13,7 +13,6 @@ const LatestBooks = () => {
   return (
     <div>
       <BookCard books={books} headline="Latest Books" />
-      <h1>Latest Books</h1>
     </div>
   )
 }

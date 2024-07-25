@@ -16,8 +16,8 @@ const Banner = () => {
             animi sit a.
           </p>
           <div>
-               <input type="search" name="search" id="search" placeholder="Search a book" className="py-2 px-2 rounded-s-sm outline-none" />
-               <button className="bg-blue-700 px-6 py-2 text-white font-medium houver:bg-black transition-all ease-in duration-200">Search</button>
+               <input type="search" name="search" id="search" placeholder="Search a book" className="py-1.5 px-2 rounded-s-sm outline-none" />
+               <button className="bg-blue-700 px-6 py-2 text-white font-medium hover:bg-blue-800 transition-all ease-in duration-200">Search</button>
           </div>
         </div>
         <div>
